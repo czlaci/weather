@@ -1,0 +1,54 @@
+# .conkyrc by czlaci v. 1.0
+conky.config = {
+use_xft = true,
+text_buffer_size = 1024,
+
+update_interval = 60,
+background = true,
+total_run_times = 0,
+
+own_window = true,
+own_window_transparent = true,
+own_window_type = 'desktop',
+
+own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+double_buffer = true,
+
+minimum_width = 1310,
+minimum_height = 200,
+maximum_width = 1310,
+
+draw_shades = false,
+draw_outline = false,
+draw_borders = false,
+stippled_borders = 0,
+border_inner_margin = 0,
+border_width = 0,
+
+default_color = 'ccccbb',
+default_shade_color = '555555',
+default_outline_color = '555555',
+alignment = 'bottom_right',
+
+gap_x = 5,
+gap_y = 37,
+
+no_buffers = true,
+uppercase = false,
+
+cpu_avg_samples = 10,
+net_avg_samples = 10,
+override_utf8_locale = true,
+use_spacer = 'none',
+
+lua_load = '~/.conky/forecast.lua',
+lua_draw_hook_pre = 'conky_main',
+
+color1 = 'dddd44',
+color2 = '99bbee',
+color3 = 'eecc88'
+}
+
+conky.text = [[
+${execpi 60 ~/.conky/forecast.py}
+]]
